@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .App-logo {
@@ -36,3 +38,14 @@
     transform: rotate(360deg);
   }
 }
+
+.country{
+    width: 100px;
+    height: 100px;
+}
+
+.visitedCountry{
+    width: 100px;
+    height: 100px;
+}
+
