@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## RESTCountries Exercise
 
-## Available Scripts
+This task is going to look pretty familiar. We saw the RESTCountries API previously within the JavaScript `fetch()` lab. We're going to be revisiting it here, touching on some of the same topics, but this time with our fancy new React tools under our belt.
 
-In the project directory, you can run:
+Again, the API we are asking you to utilise is the **RESTCountries API** which returns information about a selected country including _e.g._ the name of the capital city, the local currency, its (continental) region and a link to the relevant Google Maps page.
 
-### `npm start`
+[RESTCountries API - end-points](https://restcountries.com/#api-endpoints-v3)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Lab Task
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You will be building a **country bucket list**, combining the classic To-Do List example with novel data. The API affords great possibilities regarding visual presentation so we are leaving the specifications for the projects fairly loose. In general, your app should:
 
-### `npm test`
+- Interface with the RESTcountries API, loading the data into your app
+- Save the loaded data using React's State management system
+- Present the user with a list of countries from which they can select from
+- Create a means to mark a country as "visited"
+- Additionally display a list of "visited countries"
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Before you jump into the code, let's think about the architecture of your frontend, and where things should be put. Firstly, let's take a look at one (possible) way to implement it. Here is a breakdown of the proposed layout:
 
-### `npm run build`
+<img src="layout-breakdown.jpeg" alt="Layout breakdown" height="500" />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+By breaking down this layout, we can conclude that our data flow should look something like this:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="data-breakdown.jpeg" alt="Layout breakdown" height="500" />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Our `App.js` will be the component that fetches countries from the API, and it will be stored within the State. We can loop through the countries within app and _pass each country as a prop_ to the `Country.js` component.
 
-### `npm run eject`
+> Remember: this is one possible way of going about implementing this, but if you find yourself lost in how to start you can use this as a reference!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Extensions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+There are a few extension tasks for this exercise. Note that all are extensible so we are not expecting all to be completed within the afternoon if any:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Have a way to display more specific details of a selected country
+- Implement a means to filter the countries within the initial list, akin to how we did within the original JavaScript exercise (an HTML form)
+- See what properties are returned from the API which you can make use of for styling your webpage in some way
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+It is up to you how you design and implement this feature. Because we have left the design and largely the implementation of functionality loose for this lab, do attempt to work your way through the points set out above but also _feel free to experiment and work in other areas that you feel you need to practise with_.
 
-## Learn More
+## Tips
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You may find that the use of a JSON formatter will help significantly when getting to grips with the data the API returns.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_e.g._ [JSON formatter - JSON Pretty Print](https://jsonformatter.org/json-pretty-print)
