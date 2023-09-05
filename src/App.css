@@ -50,15 +50,20 @@
 }
 
 .country-container {
-  display: flex; /* Use Flexbox */
-  justify-content: space-between; /* Spacing between the two sections */
-  gap: 20px; /* Gap between the two sections */
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.visited-country,
+.visited-country{
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
 .countries {
-  flex: 1; /* Allow both sections to grow and occupy available space */
-  border: 1px solid #ccc; /* Optional: Add borders for clarity */
-  padding: 10px; /* Optional: Add padding for spacing inside sections */
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
