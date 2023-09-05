@@ -21,17 +21,39 @@ const CountryList = ({ countries }) => {
     ));
 
     return (
-        <>
-            <h2>Countries</h2>
-            <ul>{mappedCountries}</ul>
-            <h2>Visited Countries</h2>
-            <ul>
-                {visitedCountries.map((country) => (
-                    <li key={country.id}>{country.name.common} {country.flag}</li>
-                ))}
-            </ul>
-        </>
+        <div className="country-container">
+            <div className="visited-country">
+
+                <h2>Countries</h2>
+                <ul>{mappedCountries}</ul>
+
+            </div>
+
+            <div className="countries">
+
+                <h2>Visited Countries</h2>
+                <ul>
+                    {visitedCountries.map((country) => (
+                        <li key={country.id}>{country.name.common} {country.flag}</li>
+                    ))}
+                </ul>
+
+            </div>
+        </div>
     );
+
+    // return (
+    //     <>
+    //         <h2>Countries</h2>
+    //         <ul>{mappedCountries}</ul>
+    //         <h2>Visited Countries</h2>
+    //         <ul>
+    //             {visitedCountries.map((country) => (
+    //                 <li key={country.id}>{country.name.common} {country.flag}</li>
+    //             ))}
+    //         </ul>
+    //     </>
+    // );
 };
 
 export default CountryList;

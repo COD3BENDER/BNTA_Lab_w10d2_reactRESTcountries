@@ -1,7 +1,5 @@
 import './App.css';
 import CountryContainer from "./containers/CountryContainer";
-import VisitedCountryContainer from "./containers/VisitedCountryContainer";
-
 
 function App() {
   return (
